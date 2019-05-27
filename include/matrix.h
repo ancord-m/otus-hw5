@@ -1,5 +1,6 @@
-template <typename T, int DefaultValue>
-class Matrix
-{
-public:
-};
+#ifndef MATRIX_H
+#define MATRIX_H
+
+#include "matrix.hpp"
+
+#endif /*MATRIX_H*/
