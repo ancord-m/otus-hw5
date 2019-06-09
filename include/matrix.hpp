@@ -7,25 +7,34 @@ class Matrix
 {
 	Cell<T> c;
 
-
 	struct Row
 	{
+		int defVal = DefaultValue;
 		std::map<int, T> row;
 
 		T& operator[](int col_key)
 		{
+			if(row.find(col_key) == row.end())
+			{
+				std::cout << "Empty col" << std::endl;
+			}
+
 			return row[col_key];
 		}
 
-	//	Row & operator=(int new_value)
-		
+		Row& operator=(T new_value)
+		{
+			//std::cout << __PRETTY_FUNCTION__ << std::endl;
 			//*this->insert(std::make_pair(4, new_value));
+		}
 		
+		int size(void)
+		{
+			return row.size();
+		}
+
 	};
 
-	int m[3][3];
-	std::vector<std::vector<int>> mv;
-	std::vector<int> vec;
 
 	std::map<int, Row> mtx;
 
@@ -33,34 +42,28 @@ public:
 
 	Matrix()
 	{
-	/*	for(int i = 0; i < 3; i++)
-		{
-			for(int j = 0; j < 3; j++)
-			{
-				m[i][j] = i + j;
-			}
-		}*/
-		vec.push_back(5);
-		mv.push_back(vec);
-
 
 	}
 
 	Row & operator[](int row_key)
 	{
+		if(mtx.find(row_key) == mtx.end())
+		{
+			std::cout << "Empty row" << std::endl;
+		}
+
 		return mtx[row_key];
 	}
-/*
-	std::vector<int> operator[](int index_x)
-	{
-		//return m[index_x];
-		//return mv[index_x];
-		std::cout << "Overloading []" << std::endl;
-		return mv.at(index_x);
-	}
-*/
+
 	int size(void)
 	{
-		return mtx.size();
+		int size = 0;
+
+		for(auto m : mtx)
+		{
+			size += m.second.size();
+		}
+
+		return size;
 	}
 };

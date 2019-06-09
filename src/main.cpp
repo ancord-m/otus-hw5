@@ -18,15 +18,22 @@ int main(int argc, char *argv[])
 //	std::cout << value << std::endl;
 
 	//print_size(matrix);
-	std::cout << matrix.size() << std::endl;
-	matrix[50][100] = 30;
 
-	auto value = matrix[50][100];
+
+
+	
+//	matrix[50][100] = 30;
+	std::cout << matrix.size() << std::endl;
+	//auto value = 
+	matrix[1][1];
+	matrix[1][1];
+	matrix[1][3];
+	matrix[3][5];
 
 //	print_size(matrix);
 	std::cout << matrix.size() << std::endl;
 	
-	std::cout << value << std::endl;
+//	std::cout << value << std::endl;
 
 
 
